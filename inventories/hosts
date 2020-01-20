@@ -1,8 +1,9 @@
 [gns3-core]
-S1
-S2
+S1 ansible_host=192.168.0.201
+S2 ansible_host=192.168.0.202
+
 
 [gns3-ccess]
-S3
-S4
-S5
+S3 ansible_host=192.168.0.203
+S4 ansible_host=192.168.0.204
+S5 ansible_host=192.168.0.205
