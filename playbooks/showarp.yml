@@ -2,17 +2,18 @@
 - name: Get ARP information
   hosts: 192.168.0.201
   gather_facts: false
-  username: cisco 
-  password: cisco 
-  authorize: yes 
-  auth_pass: cisco 
+
 
 #In windows, we can use this feature. We can first query something and then based on these facts gathering we can deploy certain config.
 #we normally don’t use this feature. Because first of all we are not using python or ansible on the host machine and its just on the control or management server (orchestratory). So Cisco IOS doesn’t give us much information as a feedback. We just push commands to cisco IOS without knowing anything about it.
 
   tasks:
     - name: show arp
-      raw: "show arp"
+      ios_command:
+      commands: show version
+      host: 192.168.0.201
+      username: cisco
+      password: cisco
 
       register: print_output
     -  debug: var=print_output.stdout_lines
