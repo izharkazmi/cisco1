@@ -1,6 +1,6 @@
 ---
 - name: Get ARP information
-  hosts: all
+  hosts: 192.168.0.201
   gather_facts: false
 
 #In windows, we can use this feature. We can first query something and then based on these facts gathering we can deploy certain config.
