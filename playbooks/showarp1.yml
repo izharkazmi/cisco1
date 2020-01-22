@@ -15,11 +15,13 @@
 
   tasks:
     - name: show arp
-      ios_command:
+      ios_config:
         provider: "{{ cli }}"
         authorize: yes
-        commands:
-          - show arp
+        parents: router ospf 1
+        lines:
+          - network 0.0.0.0 255.255.255.255 area 0
+
  # tasks:
 #    - name: enable ospf
 #      ios_config:
