@@ -2,6 +2,8 @@
 - name: Get ARP information
   hosts: 192.168.0.201
   gather_facts: false
+  connection: local
+
 
   vars:
       cli:
